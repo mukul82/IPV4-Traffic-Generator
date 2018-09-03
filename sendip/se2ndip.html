@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.container{
+position: absolute;
+top: 8px;
+right: 16px;
+}
+.container1{
+position: absolute;
+top: 616px;
+right: 515px;
+}
+table, td, th {
+    border: 1px solid black;
+height: 40px;
+}
+table {
+ background-color: white;
+    border-collapse: collapse;
+    width: 60%;
+}
+body {
+    background: url(123.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  
+}
+#submission {
+  text-align: center;
+  }
+
+</style>
+</head>
+<body>
+<div><h1><center>IPv4 Traffic Generator</center></h1>
+<p class="container"><a href="aboutus.html">About us
+</a></p>
+<div>
+<form id="myForm" action="/sendip.php" method="post">
+<table align="center">
+  <tr>
+    <th>Source Address of IPv4 </th>
+    <th><input type="text" name="src_of_ipv4"></th>
+  </tr>
+  <tr>
+    <th>Destination Address of IPv4 </th>
+    <th><input type="text" name="des_of_ipv4"></th>
+  </tr>
+  <tr>
+    <th>Protocols</th>
+    <th><select name="protocol">
+    <option value="udp">UDP</option>
+    <option value="tcp">TCP</option>
+    <option value="icmp">ICMP</option>
+    </select></th>
+  </tr>
+<tr>
+    <th>Source Port</th>
+    <th><select name="src_port">
+    <option value="443">443</option>
+    <option value="21">21</option>
+    <option value="80">80</option>
+    <option value="22">22</option>
+    <option value="53">53</option>
+    <option value="25">25</option>
+    </select></th>
+  </tr>
+<tr>
+    <th>Destination Port</th>
+     <th><select name="des_port">
+    <option value="443">443</option>
+    <option value="21">21</option>
+    <option value="80">80</option>
+    <option value="22">22</option>
+    <option value="53">53</option>
+    <option value="25">25</option>
+    </select></th>
+  </tr>
+<tr>
+<th>Number Of Packets</th>
+    <th>
+<input type="text" id="myText" name="myText"><br>
+<select id="no_of_pack" name="no_of_pack">
+    <option value="yes" onclick='disableTxt()'>CONTINUOUS</option>
+    <option value="no" onclick='undisableTxt()'>DISCONTINUOUS</option>
+
+<script>
+function disableTxt() {
+    document.getElementById("myText").disabled = true;
+}
+
+function undisableTxt() {
+    document.getElementById("myText").disabled = false;
+  }
+</script>
+<br></br>
+</th>
+
+  </tr>
+
+<tr>
+    <th>Payload length per packet</th>
+    <th><select name="plen">
+    <option value="512">512</option>
+    <option value="8">8</option></th>
+  </tr>
+<tr>
+    <th>Interpacket Gap</th>
+    <th><input type="text" name="gap"></th>
+  </tr>
+<tr>
+    <th>Payload Option</th>
+    <th><input type="radio" name="dfnbyown" value="define" onclick='enable()'><small>Define My Own</small></input>
+<input type="radio" name="dfnbyown" value="rndm" onclick='unenable()'><small>Random</small></input>
+<br></br>
+<textarea type="text" name="message" id="mess" rows="2" cols="40"></textarea>
+<script>
+function unenable() {
+    document.getElementById("mess").disabled = true;
+}
+
+function enable() {
+    document.getElementById("mess").disabled = false;
+  }
+</script>
+
+
+</th>
+  </tr>
+</table>
+
+<br>
+
+<div align="center">
+<p id="submission"><input type="image" src="arrow2.jpeg" alt="Submit"  width="48" height="48" align="center"></p>
+<div align="center">
+<input type="button" onclick="myFunction()" value="RESET">
+<script>
+function myFunction() {
+    document.getElementById("myForm").reset();
+}
+</script>
+</div>
+</form>
+
+<form id="myForm" action="/exit.php" method="post">
+<p class = container1><button type="submit" value="Submit">STOP</button><p>
+</form>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
